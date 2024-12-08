@@ -110,18 +110,18 @@ const Navbar = () => {
           Compare
         </NavLink>
       </li>
-      {/* <li>
+       <li>
         <NavLink
-          to="/reviews"
+          to="/aboutus"
           className={({ isActive }) =>
             isActive
               ? "text-[#1f746a] "
               : "hover:text-[#2A9D8F] hover:font-bold"
           }
         >
-          Review
+          About us
         </NavLink>
-      </li> */}
+      </li> 
 
       {user ? (
         <li>
