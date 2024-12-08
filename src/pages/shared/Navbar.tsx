@@ -96,18 +96,7 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      {/* <li>
-        <NavLink
-          to="/booking"
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#1f746a] "
-              : "hover:text-[#2A9D8F] hover:font-bold"
-          }
-        >
-          Booking
-        </NavLink>
-      </li> */}
+    
 
       <li>
         <NavLink
@@ -121,7 +110,7 @@ const Navbar = () => {
           Compare
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink
           to="/reviews"
           className={({ isActive }) =>
@@ -132,7 +121,7 @@ const Navbar = () => {
         >
           Review
         </NavLink>
-      </li>
+      </li> */}
 
       {user ? (
         <li>
@@ -178,8 +167,8 @@ const Navbar = () => {
             {navItem}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl font-bold">
-          <span className="text-[#264653]">Turbo</span>{" "}
+        <a className=" normal-case text-xl font-bold">
+          <span className="text-[#264653]">Turbo</span>
           <span className="text-[#2A9D8F]">Shine</span>
         </a>
       </div>

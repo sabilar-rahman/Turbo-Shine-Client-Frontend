@@ -68,7 +68,7 @@ const DashboardLayout = () => {
             >
               <FaArrowLeft className="w-5 h-5 mr-2" />{" "}
               {/* Using the Font Awesome icon */}
-              Back to HomePage
+              TurboShine
             </Link>
           </li>
           {sidebarItems.map((item) => (
