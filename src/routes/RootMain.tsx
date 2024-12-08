@@ -10,12 +10,11 @@ const RootMain = () => {
       <div className=" container mx-auto ">
         <Navbar />
       </div>
-   
 
       <Outlet />
-      <ScrollToTop/>
+      <ScrollToTop />
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };
