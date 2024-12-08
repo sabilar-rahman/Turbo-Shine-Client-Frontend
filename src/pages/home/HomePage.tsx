@@ -7,6 +7,7 @@ import ReviewHomePage from "./review/ReviewHomePage";
 import WhyChooseUs from "./WhyChooseUs";
 import AskedQuestions from "./AskedQuestions";
 import Location from "./Location";
+import ServicesWeProvide from "./ServicesWeProvide";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,13 @@ const HomePage = () => {
 
       <Hero />
 
+      <div className="container py-8 ">
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
+          Services we Provide
+          <hr className="w-20 mt-2 border-[3px] mx-auto border-[#02c39a] " />
+        </h1>
+        <ServicesWeProvide />
+      </div>
       <div className="container py-8 ">
         <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
           Featured Services
