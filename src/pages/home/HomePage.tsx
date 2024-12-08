@@ -6,6 +6,7 @@ import ReviewForm from "./review/ReviewForm";
 import ReviewHomePage from "./review/ReviewHomePage";
 import WhyChooseUs from "./WhyChooseUs";
 import AskedQuestions from "./AskedQuestions";
+import Location from "./Location";
 
 const HomePage = () => {
   return (
@@ -35,6 +36,13 @@ const HomePage = () => {
           <hr className="w-20 mt-2 border-[3px] mx-auto border-[#02c39a] " />
         </h1>
         <AskedQuestions/>
+      </div>
+      <div className="container py-8 ">
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
+          Location
+          <hr className="w-20 mt-2 border-[3px] mx-auto border-[#02c39a] " />
+        </h1>
+      <Location/>
       </div>
 
       <div className="container  py-8 ">
