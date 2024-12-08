@@ -1,6 +1,6 @@
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 import { useGetAllReviewsQuery } from "@/redux/api/UserApi/reviewApi";
 import { TReview } from "@/types";
@@ -15,9 +15,9 @@ const ReviewHomePage = () => {
   // const isLoggedIn = useAppSelector(useCurrentUser); // Replace with your actual auth state selector
   // const navigate = useNavigate();
 
-  useEffect(()=>{
-    AOS.init({duration:1200})
-  })
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  });
 
   const reviews: TReview[] = response?.data || [];
   console.log("review data", reviews);
@@ -27,7 +27,7 @@ const ReviewHomePage = () => {
   }
 
   if (!reviews || reviews.length === 0) {
-    return <p className='text-center'>No reviews available at the moment.</p>;
+    return <p className="text-center">No reviews available at the moment.</p>;
   }
 
   // Calculate overall site's rating (average rating)
@@ -45,12 +45,10 @@ const ReviewHomePage = () => {
   const fullStars = Math.floor(parseFloat(overallRating));
   const hasHalfStar = parseFloat(overallRating) - fullStars >= 0.5;
 
-
-
   return (
-    <div className="container mx-auto">
+    <div className="">
       {/* Overall Site Rating */}
-      <div className="text-center mb-6 py-6 flex justify-center items-center md:gap-4">
+      <div className="text-center mb-2 py-6 flex justify-center items-center md:gap-4">
         <h3 className="text-xl md:text-2xl font-semibold text-hover">
           Overall Site Rating:
         </h3>
@@ -97,10 +95,8 @@ const ReviewHomePage = () => {
         </div>
       </div>
 
-
-
       {/* User Reviews Section */}
-      <div className='' data-aos="fade-right">
+      <div className="" data-aos="fade-right">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {lastTwoReviews.map((review, index: number) => (

@@ -28,28 +28,33 @@ const HomePage = () => {
           Why Choose us?
           <hr className="w-20 mt-2 border-[3px] mx-auto border-[#02c39a] " />
         </h1>
-        <WhyChooseUs/>
+        <WhyChooseUs />
       </div>
       <div className="container py-8 ">
         <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
           Frequent Asked Questions
           <hr className="w-20 mt-2 border-[3px] mx-auto border-[#02c39a] " />
         </h1>
-        <AskedQuestions/>
+        <AskedQuestions />
       </div>
+
       <div className="container py-8 ">
         <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
           Location
           <hr className="w-20 mt-2 border-[3px] mx-auto border-[#02c39a] " />
         </h1>
-      <Location/>
+        <Location />
       </div>
 
-      <div className="container  py-8 ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-          <ReviewForm />
-          <ReviewHomePage />
-        </div>
+      <div className="container py-8 ">
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
+          Latest Review
+          <hr className="w-20 mt-2 border-[3px] mx-auto border-[#02c39a] " />
+        </h1>
+
+        <ReviewHomePage />
+
+        <ReviewForm />
       </div>
     </div>
   );

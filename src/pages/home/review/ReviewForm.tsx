@@ -13,72 +13,48 @@ const ReviewForm = () => {
   const { handleSubmit, reset, register } = useForm<TReview>();
   const [rating, setRating] = useState<number>(0);
   const [createReview, refetch] = useCreateReviewMutation();
-
+  
   const isLoggedIn = useAppSelector(useCurrentUser); // Replace with your actual auth state selector
   const navigate = useNavigate();
 
+  const [showLoginModal, setShowLoginModal] = useState(false); // State for modal visibility
+
   const onSubmit: SubmitHandler<TReview> = async (data) => {
+    if (!isLoggedIn) {
+      setShowLoginModal(true); // Show the login modal if not logged in
+      return; // Don't proceed with review submission
+    }
+
     console.log("Review Data:", { ...data, rating });
     reset();
     setRating(0);
     try {
       console.log("Submitting review data:", { ...data, rating });
       await createReview({ ...data, rating }).unwrap();
-
       toast.success("Review submitted successfully!");
-      //   Swal.fire({
-      //     title: "Success",
-      //     text: "Review submitted successfully!",
-      //     icon: "success",
-      //   });
       refetch;
     } catch (err) {
       toast.warning("Something went wrong. Please try again.");
-
-      //   console.error("Error submitting review:", err);
-      //   const errorMessage =
-      //     err?.message || "An error occurred while submitting the review.";
-
-      //   Swal.fire({
-      //     title: "Error",
-      //     text: errorMessage,
-      //     icon: "error",
-      //   });
     }
   };
 
   const handleLoginRedirect = () => {
     navigate("/login"); // Redirect to the login page
+    setShowLoginModal(false); // Close the modal after redirect
   };
 
   return (
     <div className="relative">
-      {!isLoggedIn && (
-        <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white z-10 rounded-lg">
-          <p className="text-xl font-semibold mb-4">
-            Please log in to post a comment.
-          </p>
-          <button
-            onClick={handleLoginRedirect}
-            className="bg-primary px-6 py-3 text-lg font-bold rounded-md hover:bg-hover transition duration-300"
-          >
-            Go to Login
-          </button>
-        </div>
-      )}
       {/* Review Form */}
-
-      {/* <ReviewForm /> */}
-
       <div className="flex items-center justify-center max-w-screen py-2">
         <div className="w-full max-w-lg bg-white dark:bg-gray-800 ">
-          <h2 className="text-3xl font-bold text-center text-primary mb-2">
+          <h2 className="text-2xl font-bold text-center text-primary mb-2">
             Leave us a review
           </h2>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Star Rating Section */}
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-2">
               {[...Array(5)].map((_, index) => (
                 <svg
                   key={index}
@@ -105,7 +81,7 @@ const ReviewForm = () => {
                 htmlFor="review"
                 className="block text-lg font-medium text-primary mb-2"
               >
-                Your Review
+               Please Write a Review
               </label>
               <textarea
                 id="review"
@@ -128,6 +104,31 @@ const ReviewForm = () => {
           </form>
         </div>
       </div>
+
+      {/* Login Modal */}
+      {showLoginModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-80">
+            <h3 className="text-xl font-semibold text-center text-primary mb-4">
+              You need to log in to submit a review
+            </h3>
+            <div className="flex justify-center space-x-4">
+              <button
+                onClick={handleLoginRedirect}
+                className="bg-primary text-white px-4 py-2 rounded-md hover:bg-hover transition duration-300"
+              >
+                Go to Login
+              </button>
+              <button
+                onClick={() => setShowLoginModal(false)} // Close modal without action
+                className="bg-gray-300 text-black px-4 py-2 rounded-md hover:bg-gray-400 transition duration-300"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
