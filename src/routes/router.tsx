@@ -55,16 +55,17 @@ const router = createBrowserRouter([
         path: "/aboutus",
         element: <AboutUs/>,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
     ],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
+  // this is for without layout of navbar and footer
   {
     path: "/dashboard/admin",
     element: <DashboardLayout />,
