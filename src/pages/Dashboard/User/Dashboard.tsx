@@ -11,14 +11,14 @@ const Dashboard = () => {
   const { name, email, role, phone, address, img } = user;
 
   return (
-    <div className="min-h-screen p-6 bg-gray-50 flex items-center justify-center">
+    <div className="p-6  flex items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
         <div className="flex flex-col items-center">
           {/* User Image */}
           <img
             src={img}
            
-            className="w-24 h-24 rounded-full mb-4 object-cover"
+            className="w-56 h-56 rounded-full mb-2 object-cover"
           />
           {/* User Information */}
           <h2 className="text-xl font-semibold mb-2">{name}</h2>

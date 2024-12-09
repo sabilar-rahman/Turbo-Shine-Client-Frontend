@@ -100,10 +100,10 @@ const Compare = () => {
   }
 
   return (
-    <div className="container mx-auto  ">
+    <div className="container mx-auto h-dvh">
        <PageTitle title="Compare | Turbo Shine" />
-      <div className="mb-6">
-        <h3 className=" font-semibold mb-8 text-2xl ">
+      <div className="mb-2">
+        <h3 className=" font-semibold mb-8 text-xl ">
           Select Services to Compare
         </h3>
 

@@ -143,7 +143,7 @@ const Service = () => {
                 onClick={handleResetFilters}
                 className="mt-4 bg-red-500 text-white p-2 rounded-lg w-full hover:bg-red-600"
               >
-                Reset Filters
+                Reset
               </button>
             </div>
           </div>
