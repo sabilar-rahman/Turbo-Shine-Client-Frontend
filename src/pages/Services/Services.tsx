@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAppSelector } from "@/redux/hook";
+import { Link } from "react-router-dom";
+
 import { TService } from "@/types";
 import { useGetAllServicesQuery } from "@/redux/api/adminApi/service.Api";
 import LoaderSpinner from "../shared/loadingPage/LoadingSpinner";

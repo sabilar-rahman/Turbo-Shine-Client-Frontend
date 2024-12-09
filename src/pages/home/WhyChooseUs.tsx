@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import WhyChooseImg from "../../assets/whychoose.jpg";
 
 import AOS from "aos";
